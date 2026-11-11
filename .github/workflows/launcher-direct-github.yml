@@ -15,7 +15,7 @@ jobs:
           import hashlib, json, os, time, urllib.request, urllib.parse
           start = time.monotonic()
           opener = urllib.request.build_opener(urllib.request.ProxyHandler({}))
-          manifest_url = 'https://github.com/qinyan-alpha/azure-grimoire-updater-test/releases/download/updater-direct-20261112/manifest.json'
+          manifest_url = 'https://github.com/qinyan-alpha/azure-grimoire-updater-test/releases/download/updater-direct-20261112/manifest-routed.json'
           expected_hash = 'f045a4e600fabb353facb2da9863415aaecac1fb8f177d61a09ecb4a6891e011'
           with opener.open(manifest_url, timeout=30) as response:
               manifest = json.load(response)
