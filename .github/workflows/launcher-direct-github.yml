@@ -1,0 +1,38 @@
+name: Launcher direct GitHub route check
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  download:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check manifest and package without a client proxy
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, os, time, urllib.request, urllib.parse
+          start = time.monotonic()
+          opener = urllib.request.build_opener(urllib.request.ProxyHandler({}))
+          manifest_url = 'https://github.com/qinyan-alpha/azure-grimoire-updater-test/releases/download/updater-direct-20261112/manifest.json'
+          expected_hash = 'f045a4e600fabb353facb2da9863415aaecac1fb8f177d61a09ecb4a6891e011'
+          with opener.open(manifest_url, timeout=30) as response:
+              manifest = json.load(response)
+          package = manifest['versions'][0]['update']
+          urls = package['url']
+          url = urls[0] if isinstance(urls, list) else urls
+          assert url.startswith('https://github.com/qinyan-alpha/azure-grimoire-updater-test/releases/download/')
+          with opener.open(url, timeout=60) as response:
+              data = response.read()
+              final_url = response.url
+          actual_hash = hashlib.sha256(data).hexdigest()
+          assert actual_hash == expected_hash == package['sha256']
+          assert len(data) == package['size']
+          result = {'passed': True, 'environment': 'GitHub-hosted ubuntu-latest runner', 'clientProxy': False,
+              'manifestUrl': manifest_url, 'packageUrl': url, 'downloadHost': urllib.parse.urlparse(final_url).hostname,
+              'bytes': len(data), 'sha256': actual_hash, 'elapsedSeconds': round(time.monotonic()-start, 2)}
+          print('ROUTE_RESULT=' + json.dumps(result))
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as summary:
+              summary.write('Direct GitHub download passed.\n\n```json\n' + json.dumps(result, indent=2) + '\n```\n')
+          PY
