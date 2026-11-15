@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "notice": "Azure Grimoire 正式玩家测试发布源；不含 90.x 传输测试包。",
+  "channels": [
+    {
+      "id": "beta",
+      "name": "玩家测试版"
+    },
+    {
+      "id": "stable",
+      "name": "稳定基线"
+    }
+  ],
+  "launcher": {
+    "version": "1.2.0",
+    "url": [
+      "https://gh-proxy.com/https://github.com/qinyan-alpha/azure-grimoire-updater-test/releases/download/v3.3.124/AzureGrimoireLauncher.exe",
+      "https://ghproxy.net/https://github.com/qinyan-alpha/azure-grimoire-updater-test/releases/download/v3.3.124/AzureGrimoireLauncher.exe",
+      "https://github.com/qinyan-alpha/azure-grimoire-updater-test/releases/download/v3.3.124/AzureGrimoireLauncher.exe"
+    ],
+    "size": 2394112,
+    "sha256": "514fa9bdb2dcc56c04f50b765b5ebe225a7e7d4cd55a2805283e8b0eb1b89967"
+  },
+  "bepinex": {
+    "version": "6.0.0-be.755",
+    "url": [
+      "https://gh-proxy.com/https://github.com/qinyan-alpha/azure-grimoire-updater-test/releases/download/v3.3.124/BepInEx_6.0.0-be.755_IL2CPP_Complete.zip",
+      "https://ghproxy.net/https://github.com/qinyan-alpha/azure-grimoire-updater-test/releases/download/v3.3.124/BepInEx_6.0.0-be.755_IL2CPP_Complete.zip",
+      "https://github.com/qinyan-alpha/azure-grimoire-updater-test/releases/download/v3.3.124/BepInEx_6.0.0-be.755_IL2CPP_Complete.zip"
+    ],
+    "size": 36214179,
+    "sha256": "55341e52163e50aabe7621f9cabfdee8a53c8e94d4515ea22ecba62bd00f3304"
+  },
+  "versions": [
+    {
+      "version": "3.3.124",
+      "channel": "beta",
+      "date": "2026-11-15",
+      "assets": "3.3.124",
+      "updateFrom": "3.3.89",
+      "notes": "维吉尔与素盏鸣尊维护汇总；潜能增幅原生 HUD；黑面大招吸附、离线防护配置；完整依赖和自动基线下载。",
+      "full": {
+        "url": [
+          "https://gh-proxy.com/https://github.com/qinyan-alpha/azure-grimoire-updater-test/releases/download/v3.3.124/BBEE_AzureGrimoire_3.3.124_Full.zip",
+          "https://ghproxy.net/https://github.com/qinyan-alpha/azure-grimoire-updater-test/releases/download/v3.3.124/BBEE_AzureGrimoire_3.3.124_Full.zip",
+          "https://github.com/qinyan-alpha/azure-grimoire-updater-test/releases/download/v3.3.124/BBEE_AzureGrimoire_3.3.124_Full.zip"
+        ],
+        "size": 652906264,
+        "sha256": "b2439a4cf91b6599617249940970b5cb04d1bb37d9cc1516ecea254cb80a57e2"
+      },
+      "update": {
+        "url": [
+          "https://gh-proxy.com/https://github.com/qinyan-alpha/azure-grimoire-updater-test/releases/download/v3.3.124/BBEE_AzureGrimoire_3.3.124_3.3.89_to_3.3.124_Update.zip",
+          "https://ghproxy.net/https://github.com/qinyan-alpha/azure-grimoire-updater-test/releases/download/v3.3.124/BBEE_AzureGrimoire_3.3.124_3.3.89_to_3.3.124_Update.zip",
+          "https://github.com/qinyan-alpha/azure-grimoire-updater-test/releases/download/v3.3.124/BBEE_AzureGrimoire_3.3.124_3.3.89_to_3.3.124_Update.zip"
+        ],
+        "size": 65053346,
+        "sha256": "bc1513e26e6810c395dd07a7d69c500f5b1fad32198c5ec9054500bae1827458"
+      }
+    },
+    {
+      "version": "3.3.89",
+      "channel": "stable",
+      "date": "2026-11-11",
+      "assets": "3.3.89",
+      "notes": "3.3.89 完整资源基线。",
+      "full": {
+        "url": [
+          "https://gh-proxy.com/https://github.com/qinyan-alpha/azure-grimoire-updater-test/releases/download/baseline-3.3.89/BBEE_AzureGrimoire_3.3.89_PlayerTest_Full.zip",
+          "https://ghproxy.net/https://github.com/qinyan-alpha/azure-grimoire-updater-test/releases/download/baseline-3.3.89/BBEE_AzureGrimoire_3.3.89_PlayerTest_Full.zip",
+          "https://github.com/qinyan-alpha/azure-grimoire-updater-test/releases/download/baseline-3.3.89/BBEE_AzureGrimoire_3.3.89_PlayerTest_Full.zip"
+        ],
+        "size": 624785647,
+        "sha256": "0e9b817b2cce2a7e23bdb783d459cdcb72e6fa388cf851ca34775743e469b981"
+      }
+    }
+  ]
+}
